@@ -27,7 +27,8 @@ public class GUI1 extends JFrame
 	
 	public GUI1() throws HeadlessException
 	{
-		this.setSize(700, 700);
+		this.setSize(550, 300);
+		this.setResizable(false);
 		
 		highContrastMode = new JCheckBox("Tryb dla niedowidzących");  
 		
