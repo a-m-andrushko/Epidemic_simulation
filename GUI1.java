@@ -9,7 +9,6 @@ import javax.swing.*;
 public class GUI1 extends JFrame
 {
 	
-	JPanel upperLeft, upperCentral, upperRight, lowerLeft, lowerCentral, lowerRight;
 	JCheckBox highContrastMode, hygiene, medicine;
 	JButton chooseColors;
 	Color color = (Color.white), backgroundColor = new Color(179, 235, 255);
@@ -18,6 +17,8 @@ public class GUI1 extends JFrame
 	JSlider tempo;
 	JLabel chooseTempo;
 	JButton SAVE, START, EXIT;
+	JPanel panel;
+	GridBagLayout layout;
 
 	private static final long serialVersionUID = 1L;
 	static final int SLIDER_MIN = 1;
@@ -26,17 +27,11 @@ public class GUI1 extends JFrame
 	
 	public GUI1() throws HeadlessException
 	{
-		this.setSize(500, 500);
-		this.setLayout(new GridLayout(2, 3));
+		this.setSize(700, 700);
 		
-		upperLeft = new JPanel();
-		upperLeft.setBackground(backgroundColor);
-		//upperLeft.setLayout(new GridLayout(2, 1));
 		highContrastMode = new JCheckBox("Tryb dla niedowidzących");  
-        //highContrastMode.setBounds(100, 100, 50, 50);
-        highContrastMode.setSize(highContrastMode.getPreferredSize());
-        upperLeft.add(highContrastMode);
-        chooseColors = new JButton("Wybór kolorów");
+		
+        	chooseColors = new JButton("Wybór kolorów");
 		ActionListener colorListener = new ActionListener()
 		{
 			@Override
@@ -51,58 +46,97 @@ public class GUI1 extends JFrame
 			}	
 		};
 		chooseColors.addActionListener(colorListener);
-		upperLeft.add(chooseColors);
-		
-		
-		upperCentral = new JPanel();
-		upperCentral.setBackground(backgroundColor);
+
 		diseases = new String[] {"Wybór choroby:", "1", "2", "3"};
 		chooseDisease = new JComboBox(diseases);
 		chooseDisease.setSelectedIndex(0);
+		
 		languages = new String[] {"Język:", "Polski", "English"};
 		chooseLanguage = new JComboBox(languages);
 		chooseLanguage.setSelectedIndex(0);
-		upperCentral.add(chooseDisease);
-		upperCentral.add(chooseLanguage);
 		
-		
-		upperRight = new JPanel();
-		upperRight.setBackground(backgroundColor);
+		chooseTempo = new JLabel("Tempo symulacji");
+
 		tempo = new JSlider(JSlider.HORIZONTAL, SLIDER_MIN, SLIDER_MAX, SLIDER_INIT);
 		tempo.setMajorTickSpacing(1);
-		tempo.setPaintLabels(true);
-		chooseTempo = new JLabel("Tempo symulacji");
+		tempo.setPaintLabels(true);		
+		
 		hygiene = new JCheckBox("Higiena"); 
 		medicine = new JCheckBox("Rozwój medycyny");
-		upperRight.add(tempo);
-		upperRight.add(chooseTempo);
-		upperRight.add(hygiene);
-		upperRight.add(medicine);
-		
-		
-		lowerLeft = new JPanel();
-		lowerLeft.setBackground(backgroundColor);
+
 		SAVE = new JButton("SAVE");
-		lowerLeft.add(SAVE);
-		
-		
-		lowerCentral = new JPanel();
-		lowerCentral.setBackground(backgroundColor);
+
 		START = new JButton("START");
-		lowerCentral.add(START);
-		
-		
-		lowerRight = new JPanel();
-		lowerRight.setBackground(backgroundColor);
+
 		EXIT = new JButton("EXIT");
-		lowerRight.add(EXIT);
+
 		
-		add(upperLeft);
-		add(upperCentral);
-		add(upperRight);
-		add(lowerLeft);
-		add(lowerCentral);
-		add(lowerRight);
+		panel = new JPanel();
+		
+		layout = new GridBagLayout(); 
+		panel.setLayout(layout); 
+		
+		GridBagConstraints gbc = new GridBagConstraints();  
+	    	gbc.fill = GridBagConstraints.HORIZONTAL; 
+	    
+	    	gbc.insets = new Insets(1, 1, 1, 1);
+	    	gbc.gridx = 0;  
+	    	gbc.gridy = 0;  
+	    	panel.add(highContrastMode, gbc);  
+	    
+	   	gbc.insets = new Insets(5, 5, 5, 5);
+	   	gbc.gridx = 1;  
+	    	gbc.gridy = 0; 
+	   	panel.add(chooseDisease, gbc); 
+	    
+	    	gbc.insets = new Insets(0, 60, 0, 50);
+	    	gbc.gridx = 2;
+	    	gbc.gridy = 0;
+	    	panel.add(chooseTempo, gbc);
+	    
+	    	gbc.insets = new Insets(1, 1, 1, 1);
+	    	gbc.gridx = 0;  
+	    	gbc.gridy = 1;  
+	    	panel.add(chooseColors, gbc);
+	    
+	    	gbc.insets = new Insets(5, 5, 5, 5);
+	    	gbc.gridx = 1;  
+	    	gbc.gridy = 1;  
+	    	panel.add(chooseLanguage, gbc);	    
+	    
+	    	gbc.insets = new Insets(5, 5, 5, 5);
+	    	gbc.gridx = 2;  
+	    	gbc.gridy = 1;  
+	    	panel.add(tempo, gbc); 
+	    
+	    	gbc.insets = new Insets(5, 5, 5, 5);
+	    	gbc.gridx = 2;  
+	    	gbc.gridy = 2;  
+	    	panel.add(hygiene, gbc);
+	    
+	    	gbc.insets = new Insets(5, 5, 5, 5);
+	    	gbc.gridx = 2;  
+	    	gbc.gridy = 3;  
+	    	panel.add(medicine, gbc);
+	    
+	    	gbc.insets = new Insets(50, 0, 0, 1);
+	    	gbc.gridx = 0;  
+	    	gbc.gridy = 4; 
+	    	panel.add(SAVE, gbc); 
+	    
+	    	gbc.insets = new Insets(50, 5, 0, 5);
+	    	gbc.gridx = 1;  
+	    	gbc.gridy = 4;  
+	    	panel.add(START, gbc); 
+	    
+	   	gbc.insets = new Insets(50, 1, 0, 0);
+	    	gbc.gridx = 2;  
+	    	gbc.gridy = 4;  
+	    	panel.add(EXIT, gbc); 
+	    
+	    	panel.setBackground(backgroundColor);
+	    
+	    	this.add(panel);
 	}
 
 	public static void main(String[] args) 
