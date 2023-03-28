@@ -16,7 +16,7 @@ public class GUI1 extends JFrame
 	String diseases[], languages[];
 	JSlider tempo;
 	JLabel chooseTempo;
-	JButton SAVE, START, EXIT;
+	JButton RESET, SAVE, START, EXIT;
 	JPanel panel;
 	GridBagLayout layout;
 
@@ -27,10 +27,11 @@ public class GUI1 extends JFrame
 	
 	public GUI1() throws HeadlessException
 	{
-		this.setSize(550, 300);
+		this.setSize(550, 325);
 		this.setResizable(false);
 		
-		highContrastMode = new JCheckBox("Tryb dla niedowidzących");  
+		highContrastMode = new JCheckBox("Tryb dla niedowidzących");
+		highContrastMode.setBackground(backgroundColor);
 		
         	chooseColors = new JButton("Wybór kolorów");
 		ActionListener colorListener = new ActionListener()
@@ -59,11 +60,17 @@ public class GUI1 extends JFrame
 		chooseTempo = new JLabel("Tempo symulacji");
 
 		tempo = new JSlider(JSlider.HORIZONTAL, SLIDER_MIN, SLIDER_MAX, SLIDER_INIT);
+		tempo.setBackground(backgroundColor);
 		tempo.setMajorTickSpacing(1);
 		tempo.setPaintLabels(true);		
 		
 		hygiene = new JCheckBox("Higiena"); 
+		hygiene.setBackground(backgroundColor);
+		
 		medicine = new JCheckBox("Rozwój medycyny");
+		medicine.setBackground(backgroundColor);
+		
+		RESET = new JButton("RESET");
 
 		SAVE = new JButton("SAVE");
 
@@ -103,7 +110,12 @@ public class GUI1 extends JFrame
 	    	gbc.insets = new Insets(5, 5, 5, 5);
 	    	gbc.gridx = 1;  
 	    	gbc.gridy = 1;  
-	    	panel.add(chooseLanguage, gbc);	    
+	    	panel.add(chooseLanguage, gbc);
+		
+		gbc.insets = new Insets(50, 5, 0, 5);
+	    	gbc.gridx = 1;  
+	    	gbc.gridy = 3;  
+	    	panel.add(RESET, gbc);
 	    
 	    	gbc.insets = new Insets(5, 5, 5, 5);
 	    	gbc.gridx = 2;  
@@ -120,17 +132,17 @@ public class GUI1 extends JFrame
 	    	gbc.gridy = 3;  
 	    	panel.add(medicine, gbc);
 	    
-	    	gbc.insets = new Insets(50, 0, 0, 1);
+		gbc.insets = new Insets(25, 0, 0, 1);
 	    	gbc.gridx = 0;  
-	    	gbc.gridy = 4; 
-	    	panel.add(SAVE, gbc); 
+	   	gbc.gridy = 4; 
+	   	panel.add(SAVE, gbc); 
 	    
-	    	gbc.insets = new Insets(50, 5, 0, 5);
+	    	gbc.insets = new Insets(25, 5, 0, 5);
 	    	gbc.gridx = 1;  
 	    	gbc.gridy = 4;  
 	    	panel.add(START, gbc); 
 	    
-	   	gbc.insets = new Insets(50, 1, 0, 0);
+	    	gbc.insets = new Insets(25, 1, 0, 0);
 	    	gbc.gridx = 2;  
 	    	gbc.gridy = 4;  
 	    	panel.add(EXIT, gbc); 
