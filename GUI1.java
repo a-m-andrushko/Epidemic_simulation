@@ -19,6 +19,7 @@ public class GUI1 extends JFrame
 	JButton RESET, SAVE, START, EXIT;
 	JPanel panel;
 	GridBagLayout layout;
+	gui22 Gui2 = new gui22();
 
 	private static final long serialVersionUID = 1L;
 	static final int SLIDER_MIN = 1;
@@ -35,18 +36,14 @@ public class GUI1 extends JFrame
 		
         	chooseColors = new JButton("Wybór kolorów");
 		ActionListener colorListener = new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent arg0)
-			{
-				color = JColorChooser.showDialog(null, "Wybór kolorów", color);
-				
-				if(color == null)
-				{
-					color = (Color.white);
-				}
-			}	
-		};
+    		{
+    			@Override
+    			public void actionPerformed(ActionEvent arg0)
+    			{
+    			
+    		      Gui2.setVisible(true);
+    			}	
+    		};
 		chooseColors.addActionListener(colorListener);
 
 		diseases = new String[] {"Wybór choroby:", "1", "2", "3"};
@@ -77,7 +74,13 @@ public class GUI1 extends JFrame
 		START = new JButton("START");
 
 		EXIT = new JButton("EXIT");
-
+		
+		ActionListener exit = new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0)
+			{
+			}	
+		};
 		
 		panel = new JPanel();
 		
