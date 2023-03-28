@@ -51,7 +51,7 @@ public class gui22 extends javax.swing.JFrame {
 
 
 
-        main_panel.setBackground(new java.awt.Color(179, 235, 255));
+        main_panel.setBackground(new java.awt.Color(204, 255, 255));
 
         death_color_btn.setText("Kolor zmarłych osobników");
         death_color_btn.addActionListener(new java.awt.event.ActionListener() {
@@ -221,17 +221,17 @@ public class gui22 extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        death_shape.setIcon(new javax.swing.ImageIcon(("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"))); // NOI18N
+        death_shape.setIcon(new javax.swing.ImageIcon(("/icons/kolo.png"))); // NOI18N
 
-        infected_shape.setIcon(new javax.swing.ImageIcon(("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"))); // NOI18N
+        infected_shape.setIcon(new javax.swing.ImageIcon(("/icons/kolo.png"))); // NOI18N
 
-        fine_shape.setIcon(new javax.swing.ImageIcon(("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"))); // NOI18N
+        fine_shape.setIcon(new javax.swing.ImageIcon(("/icons/kolo.png"))); // NOI18N
 
-        cured_shape.setIcon(new javax.swing.ImageIcon(("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"))); // NOI18N
+        cured_shape.setIcon(new javax.swing.ImageIcon(("/icons/kolo.png"))); // NOI18N
 
-        meds_shape.setIcon(new javax.swing.ImageIcon(("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"))); // NOI18N
+        meds_shape.setIcon(new javax.swing.ImageIcon(("/icons/kolo.png"))); // NOI18N
 
-        isolated_shape.setIcon(new javax.swing.ImageIcon(("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"))); // NOI18N
+        isolated_shape.setIcon(new javax.swing.ImageIcon(("/icons/kolo.png"))); // NOI18N
 
         javax.swing.GroupLayout main_panelLayout = new javax.swing.GroupLayout(main_panel);
         main_panel.setLayout(main_panelLayout);
@@ -396,13 +396,13 @@ public class gui22 extends javax.swing.JFrame {
         String s = (String) death_combo.getSelectedItem();
         switch(s){
             case "Koło":
-                death_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"));
+                death_shape.setIcon(new javax.swing.ImageIcon("/icons/kolo.png"));
                 break;
             case "Kwadrat":
-                death_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kwadrat.png"));
+                death_shape.setIcon(new javax.swing.ImageIcon("/icons/kwadrat.png"));
                 break;
             case "Trójkąt":
-                death_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/trojkat.png"));
+                death_shape.setIcon(new javax.swing.ImageIcon("/icons/trojkat.png"));
                 break;
             case "Własny wybór":
             	JFileChooser fileChooser = new JFileChooser();
@@ -434,13 +434,13 @@ public class gui22 extends javax.swing.JFrame {
         String s = (String) fine_combo.getSelectedItem();
         switch(s){
             case "Koło":
-                fine_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"));
+                fine_shape.setIcon(new javax.swing.ImageIcon("/icons/kolo.png"));
                 break;
             case "Kwadrat":
-                fine_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kwadrat.png"));
+                fine_shape.setIcon(new javax.swing.ImageIcon("/icons/kwadrat.png"));
                 break;
             case "Trójkąt":
-                fine_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/trojkat.png"));
+                fine_shape.setIcon(new javax.swing.ImageIcon("/icons/trojkat.png"));
                 break;
             case "Własny wybór":
             	JFileChooser fileChooser = new JFileChooser();
@@ -466,13 +466,13 @@ public class gui22 extends javax.swing.JFrame {
        String s = (String) infect_combo.getSelectedItem();
         switch(s){
             case "Koło":
-                infected_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"));
+                infected_shape.setIcon(new javax.swing.ImageIcon("/icons/kolo.png"));
                 break;
             case "Kwadrat":
-                infected_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kwadrat.png"));
+                infected_shape.setIcon(new javax.swing.ImageIcon("/icons/kwadrat.png"));
                 break;
             case "Trójkąt":
-                infected_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/trojkat.png"));
+                infected_shape.setIcon(new javax.swing.ImageIcon("/icons/trojkat.png"));
                 break;
             case "Własny wybór":
             	JFileChooser fileChooser = new JFileChooser();
@@ -498,13 +498,13 @@ public class gui22 extends javax.swing.JFrame {
         String s = (String) cured_combo.getSelectedItem();
         switch(s){
             case "Koło":
-                cured_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"));
+                cured_shape.setIcon(new javax.swing.ImageIcon("/icons/kolo.png"));
                 break;
             case "Kwadrat":
-                cured_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kwadrat.png"));
+                cured_shape.setIcon(new javax.swing.ImageIcon("/icons/kwadrat.png"));
                 break;
             case "Trójkąt":
-                cured_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/trojkat.png"));
+                cured_shape.setIcon(new javax.swing.ImageIcon("/icons/trojkat.png"));
                 break;
             case "Własny wybór":
             	JFileChooser fileChooser = new JFileChooser();
@@ -530,13 +530,13 @@ public class gui22 extends javax.swing.JFrame {
           String s = (String) meds_combo.getSelectedItem();
         switch(s){
             case "Koło":
-                meds_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"));
+                meds_shape.setIcon(new javax.swing.ImageIcon("/icons/kolo.png"));
                 break;
             case "Kwadrat":
-                meds_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kwadrat.png"));
+                meds_shape.setIcon(new javax.swing.ImageIcon("/icons/kwadrat.png"));
                 break;
             case "Trójkąt":
-                meds_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/trojkat.png"));
+                meds_shape.setIcon(new javax.swing.ImageIcon("/icons/trojkat.png"));
                 break;
             case "Własny wybór":
             	JFileChooser fileChooser = new JFileChooser();
@@ -562,13 +562,13 @@ public class gui22 extends javax.swing.JFrame {
           String s = (String) isolated_combo.getSelectedItem();
         switch(s){
             case "Koło":
-                isolated_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kolo.png"));
+                isolated_shape.setIcon(new javax.swing.ImageIcon("/icons/kolo.png"));
                 break;
             case "Kwadrat":
-                isolated_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/kwadrat.png"));
+                isolated_shape.setIcon(new javax.swing.ImageIcon("/icons/kwadrat.png"));
                 break;
             case "Trójkąt":
-                isolated_shape.setIcon(new javax.swing.ImageIcon("C:/Users/Konrad/eclipse-workspace/Gui/src/panel1/trojkat.png"));
+                isolated_shape.setIcon(new javax.swing.ImageIcon("/icons/trojkat.png"));
                 break;
             case "Własny wybór":
             	JFileChooser fileChooser = new JFileChooser();
