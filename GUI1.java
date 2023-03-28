@@ -68,19 +68,35 @@ public class GUI1 extends JFrame
 		medicine.setBackground(backgroundColor);
 		
 		RESET = new JButton("RESET");
+		ActionListener reset = new ActionListener()
+		{
+			@Override
+			public void actionPerformed(ActionEvent arg0)
+			{
+				Window frameGUI1 = SwingUtilities.windowForComponent((Component) arg0.getSource());
+	            frameGUI1.setVisible(false);
+				
+				GUI1 frameGUI2 = new GUI1();
+				frameGUI2.setVisible(true);
+			}	
+		};
+		RESET.addActionListener(reset);
 
 		SAVE = new JButton("SAVE");
 
 		START = new JButton("START");
 
 		EXIT = new JButton("EXIT");
-		
-		ActionListener exit = new ActionListener() {
+		ActionListener exit = new ActionListener()
+		{
 			@Override
 			public void actionPerformed(ActionEvent arg0)
 			{
+				System.exit(0);
 			}	
 		};
+		EXIT.addActionListener(exit);
+		
 		
 		panel = new JPanel();
 		
