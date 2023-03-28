@@ -3,14 +3,14 @@ import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-
+import javax.swing.JFrame;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class gui22 extends javax.swing.JFrame {
+public class gui22 extends JFrame {
 
     public gui22() {
         initComponents();
