@@ -51,7 +51,7 @@ public class gui22 extends javax.swing.JFrame {
 
 
 
-        main_panel.setBackground(new java.awt.Color(204, 255, 255));
+        main_panel.setBackground(new java.awt.Color(179, 235, 255));
 
         death_color_btn.setText("Kolor zmarłych osobników");
         death_color_btn.addActionListener(new java.awt.event.ActionListener() {
