@@ -6,12 +6,20 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class GUI1 extends JFrame
+public class GUI1 extends JFrame implements ActionListener
 {
+	
+	private static final long serialVersionUID = 1L;
 	
 	JCheckBox highContrastMode, hygiene, medicine;
 	JButton chooseColors;
-	Color color = (Color.white), backgroundColor = new Color(179, 235, 255);
+	Color color = (Color.WHITE); 
+	Color backgroundColor = new Color(179, 235, 255);
+	Color highContrastModeBackgroundColor = new Color(0, 0, 51);
+	Color highContrastModeFontColor = new Color(204, 230, 255);
+	Color black = Color.BLACK;
+	Color buttonBackground;
+	Color comboBoxBackground;
 	JComboBox chooseDisease, chooseLanguage;
 	String diseases[], languages[];
 	JSlider tempo;
@@ -19,9 +27,8 @@ public class GUI1 extends JFrame
 	JButton RESET, SAVE, START, EXIT;
 	JPanel panel;
 	GridBagLayout layout;
-	gui22 Gui2 = new gui22();
+	GUI2 GUI2 = new GUI2(this);
 
-	private static final long serialVersionUID = 1L;
 	static final int SLIDER_MIN = 1;
 	static final int SLIDER_MAX = 10;
 	static final int SLIDER_INIT = 5;
@@ -31,17 +38,18 @@ public class GUI1 extends JFrame
 		this.setSize(550, 325);
 		this.setResizable(false);
 		
-		highContrastMode = new JCheckBox("Tryb dla niedowidzących");
+		highContrastMode = new JCheckBox("Tryb dużego kontrastu", false);
 		highContrastMode.setBackground(backgroundColor);
+		highContrastMode.addActionListener(e->GUI2.highContrastModeMethod());
 		
-        	chooseColors = new JButton("Wybór kolorów");
+        chooseColors = new JButton("Wybór kolorów");
+        buttonBackground = chooseColors.getBackground();
 		ActionListener colorListener = new ActionListener()
     		{
     			@Override
     			public void actionPerformed(ActionEvent arg0)
     			{
-    			
-    		      Gui2.setVisible(true);
+    				GUI2.setVisible(true);
     			}	
     		};
 		chooseColors.addActionListener(colorListener);
@@ -49,6 +57,7 @@ public class GUI1 extends JFrame
 		diseases = new String[] {"Wybór choroby:", "1", "2", "3"};
 		chooseDisease = new JComboBox(diseases);
 		chooseDisease.setSelectedIndex(0);
+		comboBoxBackground = chooseDisease.getBackground();
 		
 		languages = new String[] {"Język:", "Polski", "English"};
 		chooseLanguage = new JComboBox(languages);
@@ -87,15 +96,7 @@ public class GUI1 extends JFrame
 		START = new JButton("START");
 
 		EXIT = new JButton("EXIT");
-		ActionListener exit = new ActionListener()
-		{
-			@Override
-			public void actionPerformed(ActionEvent arg0)
-			{
-				System.exit(0);
-			}	
-		};
-		EXIT.addActionListener(exit);
+		EXIT.addActionListener(e->Exit());
 		
 		
 		panel = new JPanel();
@@ -170,11 +171,22 @@ public class GUI1 extends JFrame
 	    
 	    	this.add(panel);
 	}
+	
+	public void Exit()
+	{
+		System.exit(0);
+	}
 
 	public static void main(String[] args) 
 	{
 		GUI1 frameGUI1 = new GUI1();
 		frameGUI1.setVisible(true);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
