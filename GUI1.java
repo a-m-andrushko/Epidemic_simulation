@@ -42,8 +42,8 @@ public class GUI1 extends JFrame implements ActionListener
 		highContrastMode.setBackground(backgroundColor);
 		highContrastMode.addActionListener(e->GUI2.highContrastModeMethod());
 		
-        chooseColors = new JButton("Wybór kolorów");
-        buttonBackground = chooseColors.getBackground();
+        	chooseColors = new JButton("Wybór kolorów");
+       		buttonBackground = chooseColors.getBackground();
 		ActionListener colorListener = new ActionListener()
     		{
     			@Override
