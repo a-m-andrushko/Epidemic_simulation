@@ -76,7 +76,7 @@ public class GUI1 extends JFrame implements ActionListener
 		medicine = new JCheckBox("Rozwój medycyny");
 		medicine.setBackground(backgroundColor);
 		
-		RESET = new JButton("RESET");
+		RESET = new JButton("ZRESETUJ");
 		ActionListener reset = new ActionListener()
 		{
 			@Override
@@ -91,11 +91,11 @@ public class GUI1 extends JFrame implements ActionListener
 		};
 		RESET.addActionListener(reset);
 
-		SAVE = new JButton("SAVE");
+		SAVE = new JButton("ZAPISZ");
 
-		START = new JButton("START");
+		START = new JButton("STARTUJ");
 
-		EXIT = new JButton("EXIT");
+		EXIT = new JButton("WYJDŹ");
 		EXIT.addActionListener(e->Exit());
 		
 		
