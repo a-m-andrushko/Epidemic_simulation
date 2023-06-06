@@ -59,7 +59,7 @@ public class GUI1 extends JFrame implements ActionListener
 		chooseDisease.setSelectedIndex(0);
 		comboBoxBackground = chooseDisease.getBackground();
 		
-		languages = new String[] {"Język:", "Polski", "English"};
+		languages = new String[] {"Język", "Polski", "English", "Deutsch", "Русский", "漢語"};
 		chooseLanguage = new JComboBox(languages);
 		chooseLanguage.setSelectedIndex(0);
 		
