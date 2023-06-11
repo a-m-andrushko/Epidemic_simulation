@@ -54,7 +54,7 @@ public class GUI1 extends JFrame implements ActionListener
     		};
 		chooseColors.addActionListener(colorListener);
 
-		diseases = new String[] {"Wybór choroby:", "1", "2", "3"};
+		diseases = new String[] {"Wybór choroby", "COVID-19", "Grypa", "HIV"};
 		chooseDisease = new JComboBox(diseases);
 		chooseDisease.setSelectedIndex(0);
 		comboBoxBackground = chooseDisease.getBackground();
